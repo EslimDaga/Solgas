@@ -1,0 +1,54 @@
+{
+  "name": "segursat",
+  "author": "Elias",
+  "email": "eliaschampi04@gmail.com",
+  "licence": "MIT",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://checkpoint.segursat.com:8080",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.2.1",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@material-ui/styles": "^4.2.1",
+    "axios": "^0.19.2",
+    "chart.js": "^2.9.4",
+    "clsx": "^1.0.4",
+    "draft-js": "^0.11.5",
+    "history": "^4.9.0",
+    "material-table": "^1.69.0",
+    "moment": "^2.24.0",
+    "node-sass": "^4.14.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-awesome-slider": "^4.1.0",
+    "react-chartjs-2": "^2.11.1",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^6.1.0",
+    "react-hook-form": "^5.3.1",
+    "react-iframe": "^1.8.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.1"
+  }
+}

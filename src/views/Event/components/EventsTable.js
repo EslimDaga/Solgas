@@ -3,6 +3,7 @@ import { TableContainer, TableHead, TableRow, TableCell, TableBody, Button, Tabl
 import { VisibilityRounded } from "@material-ui/icons";
 import PropTypes from "prop-types";
 import { yourdate } from "common/decorator";
+
 const EventsTable = ({ data, loading, onDetailClick }) => {
     return (
         <TableContainer>

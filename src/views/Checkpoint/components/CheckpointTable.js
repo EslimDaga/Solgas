@@ -46,7 +46,7 @@ class CheckpointTable extends Component {
                             <TableCell component="th">Usuario</TableCell>
                             <TableCell component="th">Fecha de Creación</TableCell>
                             <TableCell component="th">Fecha de Modificación</TableCell>
-                            <TableCell component="th">Mapa</TableCell>
+                            <TableCell component="th" style={{textAlign : "center"}}>Mapa</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -61,7 +61,7 @@ class CheckpointTable extends Component {
                                 <TableCell>{row.username}</TableCell>
                                 <TableCell>{yourdate(row.created)}</TableCell>
                                 <TableCell>{yourdate(row.modified)}</TableCell>
-                                <TableCell>
+                                <TableCell style={{textAlign : "center"}}>
                                     <Button
                                         size="small"
                                         onClick={() => this.props.onShowMap(row.name)}

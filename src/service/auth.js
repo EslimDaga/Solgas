@@ -32,6 +32,7 @@ class AuthService {
                 }
             }).then(r => {
                 resolve(r.data)
+                cache.setItem("is_staff",r.data.is_staff);
             }).catch(err => reject(err));
         })
     }

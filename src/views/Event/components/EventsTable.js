@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { yourdate } from "common/decorator";
 
 const EventsTable = ({ data, loading, onDetailClick }) => {
+
     return (
         <TableContainer>
             <Table aria-label="simple table">

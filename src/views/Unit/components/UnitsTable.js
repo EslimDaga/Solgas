@@ -1,4 +1,4 @@
-import React, { Component,useContext } from "react"
+import React, { Component } from "react"
 import {
   TableContainer,
   TableHead,
@@ -17,16 +17,18 @@ import { Pagination } from "components";
 import DeleteIcon from '@material-ui/icons/Delete';
 import axios from 'axios';
 import cache from "../../../helpers/cache";
-import { AuthContext } from 'context/auth';
 
+console.log(cache.getItem("user"));
 class UnitTable extends Component {
-
   constructor(props){
     super();
+    this.state = {
+      is_staff : cache.getItem("user").is_staff
+    }
   }
 
   deleteUnit = async (license_plate) => {
-   await axios.delete(`http://checkpoint.segursat.com:8080/control/web/api/delete-unit/${license_plate}/`,{
+    await axios.delete(`http://checkpoint.segursat.com:8080/control/web/api/delete-unit/${license_plate}/`,{
     headers: {
       'Authorization': `JWT ${cache.getItem("user").token}`
     }});
@@ -65,7 +67,7 @@ class UnitTable extends Component {
                 <TableCell>
                   <Button
                     size="small"
-                    disabled={!this.props.is_staff}
+                    disabled={!this.state.is_staff}
                     onClick={() => this.deleteUnit(row.license_plate)}
                   >
                     <DeleteIcon />
@@ -106,8 +108,7 @@ UnitTable.propTypes = {
   rowsPerPage: PropTypes.number.isRequired,
   page: PropTypes.number.isRequired,
   handleChangePage: PropTypes.func.isRequired,
-  handleChangeRowsPerPage: PropTypes.func.isRequired,
-  is_staff: PropTypes.func.isRequired
+  handleChangeRowsPerPage: PropTypes.func.isRequired
 }
 
 export default UnitTable;

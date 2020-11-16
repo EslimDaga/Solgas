@@ -24,12 +24,12 @@ class CheckpointTable extends Component {
     constructor(props){
         super();
         this.state = {
-          paginated : null
-        }
-      }
+            is_staff : cache.getItem("user").is_staff
+				}
+		}
 
       deleteCheckpoint = async (name) => {
-       await axios.delete(`http://checkpoint.segursat.com:8080/control/web/api/delete-checkpoint/${name}/`,{
+      	await axios.delete(`http://checkpoint.segursat.com:8080/control/web/api/delete-checkpoint/${name}/`,{
         headers: {
           'Authorization': `JWT ${cache.getItem("user").token}`
         }});
@@ -70,7 +70,7 @@ class CheckpointTable extends Component {
                                     </Button>
                                     <Button
                                     size="small"
-                                    disabled={!this.props.is_staff}
+                                    disabled={!this.state.is_staff}
                                     onClick={() => this.deleteCheckpoint(row.name)}
                                     >
                                         <DeleteIcon />

@@ -23,7 +23,7 @@ class DriverTable extends Component {
   constructor(props){
     super();
     this.state = {
-      paginated : null
+      is_staff : cache.getItem("user").is_staff
     }
   }
 
@@ -67,7 +67,7 @@ class DriverTable extends Component {
                           <TableCell>
                               <Button
                                   size="small"
-                                  disabled={this.props.is_staff}
+                                  disabled={!this.state.is_staff}
                                   onClick={() => this.deleteDriver(row.dni)}
                               >
                                   <DeleteIcon />

@@ -18,7 +18,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import axios from 'axios';
 import cache from "../../../helpers/cache";
 
-console.log(cache.getItem("user"));
 class UnitTable extends Component {
   constructor(props){
     super();
